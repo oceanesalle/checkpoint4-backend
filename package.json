@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1", 
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
   "repository": {
@@ -18,11 +19,11 @@
   },
   "homepage": "https://github.com/oceanesalle/checkpoint4-backend#readme",
   "dependencies": {
-    "body-parser": "^1.19.1",
-    "ejs": "^3.1.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.17.2",
-    "express-session": "^1.17.2",
-    "nodemon": "^2.0.15",
-    "uuid": "^8.3.2"
+    "joi": "^17.6.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15"
   }
 }
