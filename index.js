@@ -12,4 +12,4 @@ app.use(express.urlencoded({extended: true}));
 
 setupRoutes(app);
 
-app.listen(port, () => console.log("Server is running on port 8000"));
+app.listen(port, () => console.log(`Server is running on port ${port}`));

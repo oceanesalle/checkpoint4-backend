@@ -10,6 +10,7 @@ const schemaClient = Joi.object({
   email: Joi.string().email().required(),
 })
 
+// racine client
 router.get('/', async (req, res) => {
   try {
       const client = await Client.getAll(); 
@@ -60,7 +61,7 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   const client = { 
-    id : req.body.id, 
+    id : req.params.id, 
     name : req.body.name,
     clientcode : req.body.clientcode, 
     email : req.body.email,

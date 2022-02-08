@@ -28,19 +28,19 @@ const deleteById = (id) => {
 }
 
 const createNew = (client) => {
-  const { name } = client;
+  const { name, clientcode, email } = client;
   return new Promise((resolve, reject) => {
-      dbConnect.query('INSERT INTO client (name) VALUES (?)', name, (err, result) => {
+      dbConnect.query('INSERT INTO client (name, clientcode, email) VALUES (?,?,?)', [name, clientcode, email], (err, result) => {
           if (err) reject(err);
           else resolve(result.insertId);
       })
   })
 }
 
-const updateClient = (name) => {
-  const { name, id } = name;
+const updateClient = (client) => {
+  const { name, clientcode, email, id } = client;
   return new Promise((resolve, reject) => {
-      dbConnect.query('UPDATE name SET title = ? WHERE id = ?', [name, id], (err, result) => {
+      dbConnect.query('UPDATE client SET name = ?, clientcode = ?, email = ? WHERE id = ?', [name, clientcode, email, id], (err, result) => {
           if (err) reject(err);
           else resolve(result);
       })
